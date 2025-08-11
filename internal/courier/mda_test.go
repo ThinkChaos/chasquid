@@ -31,7 +31,7 @@ func TestMDA(t *testing.T) {
 }
 
 func TestMDATimeout(t *testing.T) {
-	p := MDA{"/bin/sleep", []string{"1"}, 100 * time.Millisecond}
+	p := MDA{"sleep", []string{"1"}, 100 * time.Millisecond}
 
 	err, permanent := p.Deliver("from", "to@local", []byte("data"))
 	if err != errTimeout {
